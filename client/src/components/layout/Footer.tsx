@@ -35,7 +35,18 @@ export function Footer() {
                 </span>
               ))}
             </address>
-            <p className="text-small">Correspondence goes to the Secretary General.</p>
+            <p className="text-small pt-1">
+              Email:{' '}
+              <a href="mailto:pansunilag@gmail.com" className="underline hover:text-accent">
+                pansunilag@gmail.com
+              </a>
+            </p>
+            <p className="text-small text-accent font-medium pt-1">
+              For sponsorship and partnership write to{' '}
+              <a href="mailto:pansunilag@gmail.com" className="underline hover:text-white">
+                pansunilag@gmail.com
+              </a>
+            </p>
           </div>
 
           <div className="flex min-w-0 flex-[1_1_12rem] flex-col gap-2">

@@ -61,11 +61,11 @@ describe('GET /api/grading-scale', () => {
 })
 
 describe('GET /api/settings', () => {
-  it('returns contact details and the four social links, with the email as a placeholder', async () => {
+  it('returns contact details and the four social links', async () => {
     const res = await request(testApp()).get('/api/settings')
 
     expect(res.status).toBe(200)
-    expect(res.body.postalAddress).toMatch(/P\.M\.B\. 12003, Lagos$/)
+    expect(res.body.postalAddress).toContain('PANS Unilag secretariat')
     expect(res.body.socialLinks.map((l: { platform: string }) => l.platform)).toEqual([
       'Instagram',
       'X',
@@ -73,11 +73,10 @@ describe('GET /api/settings', () => {
       'LinkedIn',
     ])
     expect(res.body).toMatchObject({
-      contactEmail: '',
+      contactEmail: 'pansunilag@gmail.com',
       quickLinks: [],
       homeBanner: null,
-      isPlaceholder: true,
-      placeholderNote: expect.stringContaining('email'),
+      isPlaceholder: false,
     })
     expect(res.body).not.toHaveProperty('key')
     expect(res.body).not.toHaveProperty('_id')

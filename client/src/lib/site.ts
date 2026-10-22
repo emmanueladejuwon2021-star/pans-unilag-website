@@ -10,13 +10,12 @@ export const SITE = {
   purpose:
     'The association of every pharmacy student at the University of Lagos: for academic growth, welfare and unity, and to project the image of the pharmacy profession.',
   postalAddress: [
-    'c/o The Dean’s Office, Faculty of Pharmacy',
-    'College of Medicine Campus, University of Lagos',
-    'P.M.B. 12003, Lagos',
+    'PANS Unilag secretariat, Faculty of pharmacy,',
+    'lagos university teaching hospital, off Ishaga road, idi araba, lagos.',
   ],
-  /** Where the Faculty is (for directions), not a postal address. */
+  /** Where the Secretariat is (for directions). */
   location:
-    'Faculty of Pharmacy, Lagos University Teaching Hospital, off Ishaga Road, Idi-Araba, Lagos',
+    'PANS Unilag secretariat, Faculty of pharmacy, lagos university teaching hospital, off Ishaga road, idi araba, lagos.',
   socialLinks: [
     { platform: 'Instagram', url: 'https://www.instagram.com/pans_unilag/' },
     { platform: 'X', url: 'https://x.com/PANS_Unilag' },

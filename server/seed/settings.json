@@ -1,9 +1,9 @@
 [
   {
     "key": "site",
-    "postalAddress": "c/o The Dean's Office, Faculty of Pharmacy, College of Medicine Campus, University of Lagos, P.M.B. 12003, Lagos",
-    "location": "Faculty of Pharmacy, Lagos University Teaching Hospital, off Ishaga Road, Idi-Araba, Lagos",
-    "contactEmail": "",
+    "postalAddress": "PANS Unilag secretariat, Faculty of pharmacy, lagos university teaching hospital, off Ishaga road, idi araba, lagos.",
+    "location": "PANS Unilag secretariat, Faculty of pharmacy, lagos university teaching hospital, off Ishaga road, idi araba, lagos.",
+    "contactEmail": "pansunilag@gmail.com",
     "socialLinks": [
       {
         "platform": "Instagram",
@@ -22,7 +22,6 @@
         "url": "https://www.linkedin.com/company/pharmaceutical-association-of-nigerian-students-pans-unilag/"
       }
     ],
-    "isPlaceholder": true,
-    "placeholderNote": "Official email address needed (a role email, never a personal one)"
+    "isPlaceholder": false
   }
 ]

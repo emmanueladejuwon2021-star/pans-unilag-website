@@ -203,27 +203,25 @@ describe('Contact', () => {
   const page = (JSON.parse(pagesJson) as { slug: string }[]).find((p) => p.slug === 'contact')!
   const [settings] = JSON.parse(settingsJson) as Record<string, unknown>[]
 
-  it('shows the postal address, location and social media, with no personal email or phone', async () => {
+  it('shows the postal address, location and social media', async () => {
     mockApi({
       '/api/pages/contact': { order: 0, isPlaceholder: false, ...page },
       '/api/settings': { quickLinks: [], homeBanner: null, ...settings },
     })
     renderRoute('/connect/contact')
-    expect(await screen.findByRole('heading', { level: 2, name: 'Postal address' })).toBeTruthy()
-    expect(within(main()).getByText(/P\.M\.B\. 12003, Lagos/)).toBeTruthy()
-    expect(within(main()).getByText(/Idi-Araba, Lagos/)).toBeTruthy()
+    expect(await screen.findByRole('heading', { level: 2, name: 'Where to find us' })).toBeTruthy()
+    expect(within(main()).getAllByText(/PANS Unilag secretariat/i).length).toBeGreaterThan(0)
+    expect(within(main()).getAllByText(/idi araba, lagos/i).length).toBeGreaterThan(0)
     expect(
       within(main())
         .getByRole('link', { name: 'Get directions on Google Maps' })
         .getAttribute('href'),
-    ).toMatch(/^https:\/\/www\.google\.com\/maps\/search\/\?api=1&query=Faculty%20of%20Pharmacy/)
-    expect(within(main()).getByText('Official email address coming soon')).toBeTruthy()
+    ).toMatch(/^https:\/\/www\.google\.com\/maps\/search\/\?api=1&query=PANS/)
+    expect(within(main()).getAllByText('pansunilag@gmail.com').length).toBeGreaterThan(0)
     expect(
       within(main()).getByRole('link', { name: 'PANS UNILAG on Instagram (opens in a new tab)' }),
     ).toBeTruthy()
 
-    expect(main().querySelector('a[href^="mailto:"], a[href^="tel:"]')).toBeNull()
-    expect(main().textContent).not.toMatch(/[\w.+-]+@[\w-]+\.[\w.]+/)
     expect(main().textContent).not.toMatch(/(\+234|\b0[789][01])\d{8}/)
   })
 })

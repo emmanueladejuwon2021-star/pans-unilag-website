@@ -168,7 +168,7 @@ describe('footer', () => {
       footer.getByText('Pharmaceutical Association of Nigeria Students, University of Lagos'),
     ).toBeTruthy()
     expect(footer.getByText('Service to Humanity')).toBeTruthy()
-    expect(footer.getByText('P.M.B. 12003, Lagos')).toBeTruthy()
+    expect(footer.getByText(/PANS Unilag secretariat/i)).toBeTruthy()
     for (const name of ['Instagram', 'X', 'YouTube', 'LinkedIn']) {
       expect(footer.getByRole('link', { name }).getAttribute('href')).toMatch(/^https:\/\//)
     }

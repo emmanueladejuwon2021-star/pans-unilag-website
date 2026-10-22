@@ -149,7 +149,11 @@ describe('seed/settings.json', () => {
       'LinkedIn',
     ])
     expect(JSON.stringify(settings)).not.toMatch(/\d{7,}|psln=/)
-    expect(settings).toMatchObject({ key: 'site', contactEmail: '', isPlaceholder: true })
+    expect(settings).toMatchObject({
+      key: 'site',
+      contactEmail: 'pansunilag@gmail.com',
+      isPlaceholder: false,
+    })
     await expect(new SettingsModel({ ...settings, key: 'other' }).validate()).rejects.toThrow(/key/)
   })
 })

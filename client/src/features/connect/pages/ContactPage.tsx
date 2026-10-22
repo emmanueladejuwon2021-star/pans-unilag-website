@@ -9,8 +9,7 @@ const mapsUrl = (place: string) =>
 
 /**
  * /connect/contact: postal address and correspondence (pages.json "contact", Art. 2), then where
- * the Faculty is, the official email (once supplied) and social media. No personal emails or
- * phone numbers, ever (README → Security, privacy and data protection).
+ * the Secretariat is, the official email (pansunilag@gmail.com) and social media.
  */
 export function ContactPage() {
   return (
@@ -25,6 +24,8 @@ export function ContactPage() {
 
 function ContactDetails() {
   const settings = useContactSettings()
+  const email = settings.contactEmail || 'pansunilag@gmail.com'
+
   return (
     <>
       <section aria-labelledby="location-title" className="flex flex-col gap-3">
@@ -47,8 +48,8 @@ function ContactDetails() {
         <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-[max-content_1fr]">
           <dt className="font-heading font-medium text-text-muted">Email</dt>
           <dd>
-            {settings.contactEmail ? (
-              <a href={`mailto:${settings.contactEmail}`}>{settings.contactEmail}</a>
+            {email ? (
+              <a href={`mailto:${email}`}>{email}</a>
             ) : (
               <PlaceholderText>Official email address coming soon</PlaceholderText>
             )}
@@ -75,9 +76,22 @@ function ContactDetails() {
             </ul>
           </dd>
         </dl>
-        <p className="text-small text-text-muted">
-          We don’t list personal phone numbers or emails. Officers can be reached through the
-          Secretary General, the feedback form or our social media.
+      </section>
+
+      <section
+        aria-labelledby="sponsorship-title"
+        className="flex flex-col gap-3 rounded-2xl bg-surface-alt p-6 border border-border"
+      >
+        <h2 id="sponsorship-title" className="text-h3">
+          Sponsorship & Partnership
+        </h2>
+        <p className="text-body leading-relaxed">
+          For sponsorship, partnership, and collaborative initiatives with PANS UNILAG, please write
+          directly to{' '}
+          <a href={`mailto:${email}`} className="font-bold text-primary hover:underline">
+            {email}
+          </a>
+          .
         </p>
       </section>
     </>
